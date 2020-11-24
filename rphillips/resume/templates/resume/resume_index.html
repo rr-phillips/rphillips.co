@@ -3,8 +3,21 @@
 {% block block_content %}
 <section class="resume_section">
     <div class="resume">
-	<div class="resume__work"></div>
-	<div class="resume__education"></div>
+	<div class="resume__work">
+	    {% for job in jobs %}
+	    <h3 class="resume__title">{{ job.title }}</h3>
+		<h2 class="resume__company">{{ job.company }} <span class="resume__loc">{{ job.location }}</span></h2>
+		<p class="resume__time">{{ job.start }} - {% if job.end %} {{ job.end }} {% else %} Current {% endif %}</p> 
+		<p class="resume__desc">{{ job.description }}</p>
+	    {% endfor %}
+	</div>
+	<div class="resume__education">
+		{% for educate in educations %}
+		<h3 class="resume__degree">{{ educate.degree }}</h3>
+		<h2 class="resume__insitute">{{ educate.institution }}</h2>
+		<p class"resume__time">{{ educate.start }}{% if educate.end %}{{ educate.end }}{% else %} Current {% endif %}
+		{% endfor %}
+	</div>
     </div>
 </section>
 {% endblock %}
