@@ -2,16 +2,20 @@
 
 {% block block_content %}
 <section class="blog_section">
-    <div class="post">
-        <div class="post__title">
-            Test
+    {% for post in posts %}
+    <a href="{% url 'blog_detail' post.pk %}">
+        <div class="post">
+            <div class="post__title">
+                {{ post.title }}
+            </div>
+            <div class="post__date">
+                {{ post.createdOn.date }}| &nbsp;
+            </div>
+            <div class="post__content">
+                {{ post.content|safe | slice:":200"}}
+            </div>
         </div>
-        <div class="post__date">
-            10/11/12
-        </div>
-        <div class="post__content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel molestiae, officia necessitatibus voluptatum voluptas consectetur eaque nulla, dolores commodi autem asperiores maiores? Suscipit numquam similique aut perspiciatis accusantium dolor.
-        </div>
-    </div>
+    </a>
+    {% endfor %}
 </section>
 {% endblock %}

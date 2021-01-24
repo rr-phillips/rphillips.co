@@ -1,0 +1,17 @@
+{% extends base_template %}
+
+{% block block_content %}
+<section class="project_section">
+    <div class="project">
+        <div class="project__title">
+            {{ project.title }}
+        </div>
+        <div class="project__date">
+            {{ project.createdOn.date }}| &nbsp;
+        </div>
+        <div class="project__content">
+            {{ project.body|safe }}
+        </div>
+    </div>
+</section>
+{% endblock %}

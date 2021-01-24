@@ -1,14 +1,18 @@
 from django.db import models
 import datetime
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Job(models.Model):
     title = models.CharField(max_length=150)
-    description = models.TextField()
+    description = HTMLField()
     company = models.CharField(max_length=150)
     location = models.CharField(max_length=150)
-    start = models.DateTimeField(default=datetime.date.today)
+    start = models.DateTimeField()
     end = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return 'Job: ' + self.title + ' - ' + self.company
 
 class Education(models.Model):
     degree = models.CharField(max_length=150)
@@ -16,3 +20,5 @@ class Education(models.Model):
     start = models.DateTimeField()
     end = models.DateTimeField(null=True, blank=True)
 
+    def __str__(self):
+        return 'Education: ' + self.degree + ' - ' + self.institution

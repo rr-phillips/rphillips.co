@@ -1,0 +1,17 @@
+{% extends base_template %}
+
+{% block block_content %}
+<section class="blog_section">
+    <div class="post">
+        <div class="post__title">
+            {{ post.title }}
+        </div>
+        <div class="post__date">
+            {{ post.createdOn.date }}| &nbsp;
+        </div>
+        <div class="post__content">
+            {{ post.content|safe }}
+        </div>
+    </div>
+</section>
+{% endblock %}
