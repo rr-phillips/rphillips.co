@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'tinymce',
 
+    'rphillips',
     'blog',
     'home',
     'projects',
@@ -75,6 +76,11 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'rphillips.context_processors.baseProcessor',
+                "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
+                "django.contrib.messages.context_processors.messages"
             ],
         },
     },
@@ -131,7 +137,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = ''
 STATICFILES_DIR = [
-    BASE_DIR / 'static',
+    'css',
+    '/static/projects'
 ]

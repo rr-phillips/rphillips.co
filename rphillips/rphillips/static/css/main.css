@@ -1,0 +1,38 @@
+* {
+    background-color: #181c18;
+}
+
+h4, h3, h2, h1, p, div {
+    color: #3f633f;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: block;
+}
+
+#side__bar {
+    display: block;
+}
+
+.menu__bar {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.menu__bar--link {
+    color: #497449;
+}
+
+.menu__bar--link:hover {
+    color: #7fb37f;
+}
+
+.btn__container {
+    
+}

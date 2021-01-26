@@ -13,9 +13,9 @@ def index(request):
     return render(request, template, context)
 
 def detail(request, pk):
-    template = 'project/projects_detail.html'
+    template = 'projects/projects_detail.html'
 
-    project = Projects.object.get(pk=pk)
+    project = Projects.objects.get(pk=pk)
     context = {
         'project': project
     }

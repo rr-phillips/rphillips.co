@@ -7,10 +7,13 @@
             {{ project.title }}
         </div>
         <div class="project__date">
-            {{ project.createdOn.date }}| &nbsp;
+            <!-- {{ project.createdOn.date }}| &nbsp; -->
         </div>
         <div class="project__content">
-            {{ project.body|safe }}
+            {{ project.description|safe }}
+        </div>
+        <div class="project__repo">
+            {{ project.repoLink}}
         </div>
     </div>
 </section>

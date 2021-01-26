@@ -1,24 +1,25 @@
 {% load static %}
 <html lang="en">
 <head>
-    <!-- <link rel="stylesheet" type="text/css" href="../static/main/style.css"> -->
     <title>{% block title %}rphillips{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> -->
 </head>
 
 <body>
-    <div id="sidebar">
-        {% block sidebar %}
-        <ul class="menu__bar">
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/projects/">Projects</a></li>
-            <li><a href="/resume/">Resume</a></li>
-            <li><a href="/contact_me/">Contact Me test</a></li>
-        </ul>
-        {% endblock %}
+    <div class="container">
+        <div id="side__bar">
+            {% block sidebar %}
+            <ul class="menu__bar">
+                <li><a class="menu__bar--link" href="/">Home</a></li>
+                <li><a class="menu__bar--link" href="/blog/">Blog</a></li>
+                <li><a class="menu__bar--link" href="/projects/">Projects</a></li>
+                <li><a class="menu__bar--link" href="/resume/">Resume</a></li>
+                <li><a class="menu__bar--link" href="/contact_me/">Contact Me</a></li>
+            </ul>
+            {% endblock %}
+        </div>
     </div>
-
     <div id="content">
         {% block block_content %}
         {% endblock %}
