@@ -1,9 +1,16 @@
 .projects_section {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .projects {
-
+    width: 80%;
+    height: 20%;
+    border: 1px lightgreen solid;
+    background-color: rgb(200, 238, 200);
+    box-shadow: 5px 10px rgb(132, 146, 132);
 }
 
 .project__title {

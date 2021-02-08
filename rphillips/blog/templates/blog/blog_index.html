@@ -9,10 +9,10 @@
                 {{ post.title }}
             </div>
             <div class="post__date">
-                {{ post.createdOn.date }}| &nbsp;
+                {{ post.createdOn.date }}
             </div>
             <div class="post__content">
-                {{ post.content|safe | slice:":200"}}
+                {{ post.content|safe | slice:":200"}}...
             </div>
         </div>
     </a>
