@@ -2,20 +2,21 @@
 
 {% block block_content %}
 <section class="blog_section">
+    <h1 class="section__titles">Blog Posts</h1>
     {% for post in posts %}
-    <a href="{% url 'blog_detail' post.pk %}">
-        <div class="post">
-            <div class="post__title">
-                {{ post.title }}
+    <div class="blogs">
+        <a class="blog__link" href="{% url 'blog_detail' post.pk %}">
+            <div class="blog__title">
+                <h2>{{ post.title }}</h2>
             </div>
-            <div class="post__date">
+            <div class="blog__date">
                 {{ post.createdOn.date }}
             </div>
-            <div class="post__content">
+            <div class="blog__content">
                 {{ post.content|safe | slice:":200"}}...
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
     {% endfor %}
 </section>
 {% endblock %}

@@ -1,14 +1,19 @@
 {% load static %}
+{% load compress %}
+
 <html lang="en">
 <head>
     <title>{% block title %}rphillips{% endblock %}</title>
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main.scss' %}"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> -->
 </head>
 
 <body>
     <div class="container">
-        <div id="side__bar">
+        <div class="side__bar">
             {% block sidebar %}
             <ul class="menu__bar">
                 <li><a class="menu__bar--link" href="/">Home</a></li>

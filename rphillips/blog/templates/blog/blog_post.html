@@ -3,13 +3,13 @@
 {% block block_content %}
 <section class="blog_section">
     <div class="post">
-        <div class="post__title">
-            {{ post.title }}
+        <div class="blog__title">
+            <h2>{{ post.title }}</h2>
         </div>
-        <div class="post__date">
-            {{ post.createdOn.date }}| &nbsp;
+        <div class="blog__date">
+            {{ post.createdOn }}
         </div>
-        <div class="post__content">
+        <div class="blog__content">
             {{ post.content|safe }}
         </div>
     </div>

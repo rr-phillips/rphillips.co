@@ -1,13 +1,13 @@
 {% extends base_template %}
 
 {% block block_content %}
-<section class="project_section">
+<section class="projects_section">
     <div class="project">
         <div class="project__title">
-            {{ project.title }}
+            <h2>{{ project.title }}</h2>
         </div>
         <div class="project__date">
-            <!-- {{ project.createdOn.date }}| &nbsp; -->
+            <!-- {{ project.createdOn }} -->
         </div>
         <div class="project__content">
             {{ project.description|safe }}
