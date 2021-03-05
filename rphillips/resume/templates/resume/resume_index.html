@@ -3,39 +3,57 @@
 {% block block_content %}
 <section class="resume_section">
     <div class="resume">
-		<div class="contact__section">
-			<ul class="contact__info">
-				<li><span class="icon"></span>rebecca@rphillips.co</li>
-				<li><span class="icon"></span>Amsterdam, NY</li>
-				<li><span class="icon"></span>linkedin.com/in/rrphillips</li>
-			</ul>
+		<div class="top">
+			<div class="left_side">
+				<div class="name">REBECCA PHILLIPS</div>
+				<div class="title">Software Developer</div>
+				<div class="contact__section">
+					<ul class="contact__info">
+						<li><span class="icon"></span>rebecca@rphillips.co</li>
+						<li><span class="icon"></span>Amsterdam, NY</li>
+						<li><span class="icon"></span>linkedin.com/in/rrphillips</li>
+					</ul>
+				</div>
+				<div class="languages__section">
+					<h2 class="section__titles">Languages</h2>
+					<p class="paragraph__list">Python, R, Java, Php, Javascript, JQuery, C, SQL, HTML, CSS</p>
+				</div>
+				<div class="tools__section">
+					<h2 class="section__titles">Tools</h2>
+					<p class="paragraph__list">JIRA, Trello, Visual Studio Code, Vim, RStudio, Filezilla, MySQL Workbench, Plesk, Command Line/Prompt, Bitbucket, Github, Slack</p>
+				</div>
+				<div class="skills__section">
+					<h2 class="section__titles">Skills</h2>
+					<p class="paragraph__list">Git, Algorithms, Machine Learning, Data Mining, Django Web Framework, Angular.js, Ionic Framework, CRMs, Agile Methodologies, Scrum, Xtreme Programming Practices</p>
+				</div>
+				<div class="operating__systems">
+					<h2 class="section__titles">Operating Systems</h2>
+					<p class="paragraph__list">Linux, iOS, Windows</p>
+				</div>
+			</div>
+			<div class="right_side">
+				<div class="resume__work">
+					<div class="experience__title">Experience</div>
+					{% for job in jobs %}
+						<h2 class="resume__title">{{ job.title }}</h2>
+						<h3 class="resume__company">{{ job.company }} <span class="resume__loc">{{ job.location }}</span></h3>
+						<p class="resume__time">{{ job.start }} - {% if job.end %} {{ job.end }} {% else %} Current {% endif %}</p>
+						<p class="resume__desc">{{ job.description|safe }}</p>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
-		<div class="languages__section">
-			Python, R, Java, Php, Javascript, JQuery, C, SQL, HTML, CSS
-		</div>
-		<div class="tools__section">
-			JIRA, Trello, Visual Studio Code, Vim, RStudio, Filezilla, MySQL Workbench, Plesk, Command Line/Prompt, Bitbucket, Github, Slack
-		</div>
-		<div class="skills__section">
-			Git, Algorithms, Machine Learning, Data Mining, Django Web Framework, Angular.js, Ionic Framework, CRMs, Agile Methodologies, Scrum, Xtreme Programming Practices
-		</div>
-		<div class="operating__systems">
-			Linux, iOS, Windows
-		</div>
-		<div class="resume__work">
-			{% for job in jobs %}
-				<h2 class="resume__title">{{ job.title }}</h2>
-				<h3 class="resume__company">{{ job.company }} <span class="resume__loc">{{ job.location }}</span></h3>
-				<p class="resume__time">{{ job.start }} - {% if job.end %} {{ job.end }} {% else %} Current {% endif %}</p>
-				<p class="resume__desc">{{ job.description|safe }}</p>
-			{% endfor %}
-		</div>
-		<div class="resume__education">
-			{% for educate in educations %}
-				<h2 class="resume__degree">{{ educate.degree }}</h2>
-				<h3 class="resume__insitute">{{ educate.institution }}</h3>
-				<p class="resume__time">{{ educate.start }}{% if educate.end %}{{ educate.end }}{% else %} Current {% endif %}
-			{% endfor %}
+		<div class="bottom">
+			<div class="resume__education">
+				<div class="education_title">Education</div>
+				{% for educate in educations %}
+					<div class="degree">
+						<h2 class="resume__degree">{{ educate.degree }}</h2>
+						<h3 class="resume__institute">{{ educate.institution }}</h3>
+						<p class="resume__time">{{ educate.start }}{% if educate.end %}{{ educate.end }}{% else %} Current {% endif %}
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 </section>

@@ -38,9 +38,9 @@ a {
   color: #7fb37f;
 }
 
-.btn__container {
+/* .btn__container {
   
-}
+} */
 
 .home__title {
   font-size: 25px;
@@ -99,6 +99,112 @@ a {
   cursor: pointer;
 }
 
-
-
 /* RESUME SECTION */
+.resume_section {
+  
+}
+
+.resume {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+}
+
+.bottom {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.left_side {
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.section__titles, .education_title, .experience__title {
+  border-bottom: 2px solid #7fb37f;
+}
+
+.name {
+  font-size: 35px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.contact__section {
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+.contact__info {
+  
+}
+
+.contact__info > li {
+  list-style-type: none;
+}
+
+.contact__info > li > .icon {
+
+}
+
+.paragraph__list {
+  font-size: 13px;
+}
+
+.languages__section,
+.tools__section,
+.skills__section,
+.operating__systems {
+  padding-top: 5px;
+}
+
+.right_side {
+  width: 50%;
+  padding-right: 5%;
+}
+
+.experience__title, .education_title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.resume__work {
+
+}
+
+.resume__title {
+
+}
+.resume__company {
+
+}
+
+.resume__time {
+
+}
+
+.resume__desc {
+
+}
+
+.resume__education {
+
+}
+
+.resume__degree {
+
+}
+
+.resume__institute {
+
+}
+
+.resume__time {
+
+}
