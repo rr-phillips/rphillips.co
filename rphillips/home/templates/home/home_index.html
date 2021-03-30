@@ -1,13 +1,98 @@
 {% extends base_template %}
 
 {% block block_content %}
-<section class="home_section">
-    <div class="home">
-        <div class="home__title">
-            R.Phillips
+<section class="section shrotro" id="shortro_seciton">
+    <div class="home__title">
+        R.Phillips
+    </div>
+    <div class="home__content">
+        I am web-developer with a passion for backend development.
+    </div>
+</section>
+<!-- work/projects -->
+<section class="section projects" id="projects_section">
+    <div class="container project_container">
+        {% for project in projects %}
+        <div class="project">
+            <!-- <a class="project__link" href="{% url 'project_detail' project.pk %}"> -->
+                <div class="project__title">
+                    <h2>{{ project.title }}</h2>
+                </div>
+                <div class="project__date"></div>
+                <div class="project__content">
+                    {{ project.description|safe | slice:":200" }}..
+                </div>
+                <div class="btn__container"></div>
+            <!-- </a> -->
         </div>
-        <div class="home__content">
-            I am developer with a passion for social justice and change. My goal is to use my skills to move the world towards an equitable and green world to be passed down to future generations.
+        {% endfor %}
+    </div>
+</section>
+<!-- long intro -->
+<section class="section intro" id="intro_section">
+    <div class="container intro_contanier">
+        <div class="intro_col">
+
+        </div>
+        <div class="intro_col">
+    
+        </div>
+    </div>
+</section>
+<!-- resume -->
+<section class="section resume" id="resume_section">
+    <div class="container resume_container">
+        <div class="resume_col">
+            <div class="resume__work">
+                <div class="experience__title">Experience</div>
+                {% for job in jobs %}
+                    <h2 class="resume__title">{{ job.title }}</h2>
+                    <h3 class="resume__company">{{ job.company }} <span class="resume__loc">{{ job.location }}</span></h3>
+                    <p class="resume__time">{{ job.start }} - {% if job.end %} {{ job.end }} {% else %} Current {% endif %}</p>
+                    <!-- <p class="resume__desc">{{ job.description|safe }}</p> -->
+                {% endfor %}
+            </div>
+        </div>
+        <div class="resume_col">
+            <div class="resume__education">
+				<div class="education_title">Education</div>
+				{% for educate in educations %}
+					<div class="degree">
+						<h2 class="resume__degree">{{ educate.degree }}</h2>
+						<h3 class="resume__institute">{{ educate.institution }}</h3>
+						<p class="resume__time">{{ educate.start }}{% if educate.end %}{{ educate.end }}{% else %} Current {% endif %}
+					</div>
+				{% endfor %}
+			</div>
+        </div>
+        <div class="resume_col">
+            <div class="languages__section">
+                <div class="education_title">Languages</div>
+                <p class="paragraph__list">Python, R, Java, Php, Javascript, JQuery, C, SQL, HTML, CSS</p>
+            </div>
+            <div class="tools__section">
+                <div class="education_title">Tools</div>
+                <p class="paragraph__list">JIRA, Trello, Visual Studio Code, Vim, RStudio, Filezilla, MySQL Workbench, Plesk, Command Line/Prompt, Bitbucket, Github, Slack</p>
+            </div>
+            <div class="skills__section">
+                <div class="education_title">Skills</div>
+                <p class="paragraph__list">Git, Algorithms, Machine Learning, Data Mining, Django Web Framework, Angular.js, Ionic Framework, CRMs, Agile Methodologies, Scrum, Xtreme Programming Practices</p>
+            </div>
+            <div class="operating__systems">
+                <div class="education_title">Operating Systems</div>
+                <p class="paragraph__list">Linux, iOS, Windows</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- random facts -->
+<section class="section random" id="random_section">
+    <div class="container">
+        <div class="random_col_1">
+
+        </div>
+        <div class="random_col_2">
+    
         </div>
     </div>
 </section>
