@@ -10,38 +10,42 @@
   green: #7ea383 -- link hover color
   tan: #ccac82 -- item background color
   dark-tan: #cc9c78 -- item border color, accents
+
+  new-blue: #06658c
+  new-green: #63caae
 */
 
 html {
-  background-color: #b2caba;
-}
-
-html {
+  background-color: #f0f3f1;
   font-size: 10px;
 }
 
-h4, h3, h2, h1, p, div {
+body {
+  margin: unset;
+}
+
+h4, h3, h2, h1, p {
   color: #383943;
+  margin: 7px;
 }
 
 section {
   display: flex;
   flex-direction: column;
   max-width: 95%;
-  height:  95vh;
-  margin: 10%;
+  height: 110vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.colored_background {
+  background-color: #06658c;
+  padding: 20px;
 }
 
 .container {
   display: block;
-}
-
-.resume_container {
-  display: flex;
-}
-
-.resume_col {
-  width: 33.333%;
+  margin: 5% 7% 5% 7%;
 }
 
 .home__title {
@@ -60,6 +64,18 @@ section {
   font-size: 20px;
 }
 
+.flex_container {
+  display: flex;
+}
+
+.three_col {
+  width: 33.333%;
+}
+
+.two_col {
+  width: 50%;
+}
+
 .section__titles, .education_title, .experience__title {
   border-bottom: 2px solid #cc9c78;
   font-size: 20px;
@@ -69,13 +85,14 @@ section {
 .project_container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project {
   background-color: #ccac82;
   padding: 10px;
-  width: 45%;
-  height: 45%;
+  width: 30vw;
+  height: 30vh;
   margin: 12px;
   border-radius: 10px;
 }
@@ -89,12 +106,41 @@ section {
   justify-content: space-evenly;
 }
 
+.intro_header {
+  width: 30%;
+}
+
+.intro_body {
+  width: 70%;
+}
+
+#random_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 footer {
   height: 15vh;
   display: flex;
+  justify-content: space-between;
 }
 
 .connect_links {
   display: flex;
   flex-direction: column;
+}
+
+.connect_link {
+  margin: 10%;
+}
+
+.email>a {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.email>a:link {
+  color: #383943;
 }

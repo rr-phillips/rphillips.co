@@ -10,7 +10,7 @@
     </div>
 </section>
 <!-- work/projects -->
-<section class="section projects" id="projects_section">
+<section class="section projects colored_background" id="projects_section">
     <div class="container project_container">
         {% for project in projects %}
         <div class="project">
@@ -30,42 +30,51 @@
 </section>
 <!-- long intro -->
 <section class="section intro" id="intro_section">
-    <div class="container intro_contanier">
-        <div class="intro_col">
-
+    <div class="container flex_container">
+        <div class="two_col intro_header">
+            Nice to meet you!
         </div>
-        <div class="intro_col">
-    
+        <div class="two_col intro_body">
+           <div class="paragraph">
+               I am a full-stack developer with a passion for backend developement. I currently work with Php, and Typescript - though I enjoy working with and know Python and Django.
+           </div>
+           <div class="paragraph">
+               At my job at Silicon Swamp I work with designers and clients to bring new features and projects through all stages of development to the end user. I have worked with clients in entertainment, retail, relgion, and family care. My additional experience in psychology leads itself to many aspects of the development process from discovery workshops to working with laymen and clients.
+           </div>
+           <div class="paragraph">
+               When I'm not working I can be found taking a hike, watching a movie, or cooking up something new and delicious!
+           </div>
         </div>
     </div>
 </section>
 <!-- resume -->
-<section class="section resume" id="resume_section">
-    <div class="container resume_container">
-        <div class="resume_col">
+<section class="section resume colored_background" id="resume_section">
+    <div class="container flex_container">
+        <div class="three_col">
             <div class="resume__work">
                 <div class="experience__title">Experience</div>
                 {% for job in jobs %}
                     <h2 class="resume__title">{{ job.title }}</h2>
-                    <h3 class="resume__company">{{ job.company }} <span class="resume__loc">{{ job.location }}</span></h3>
-                    <p class="resume__time">{{ job.start }} - {% if job.end %} {{ job.end }} {% else %} Current {% endif %}</p>
+                    <h3 class="resume__company">{{ job.company }}</h3>
+                    <h4 class="resume__loc">{{ job.location }}</h4>
+                    <p class="resume__time">{{ job.start|date:"M Y" }} - {% if job.end %} {{ job.end|date:"M Y" }} {% else %} Current {% endif %}</p>
                     <!-- <p class="resume__desc">{{ job.description|safe }}</p> -->
                 {% endfor %}
             </div>
         </div>
-        <div class="resume_col">
+        <div class="three_col">
             <div class="resume__education">
 				<div class="education_title">Education</div>
 				{% for educate in educations %}
 					<div class="degree">
 						<h2 class="resume__degree">{{ educate.degree }}</h2>
 						<h3 class="resume__institute">{{ educate.institution }}</h3>
-						<p class="resume__time">{{ educate.start }}{% if educate.end %}{{ educate.end }}{% else %} Current {% endif %}
+						<p class="resume__time">{{ educate.start|date:"M Y" }} - {% if educate.end %}{{ educate.end|date:"M Y" }}{% else %} Current {% endif %}
 					</div>
 				{% endfor %}
 			</div>
         </div>
-        <div class="resume_col">
+        <div class="three_col">
             <div class="languages__section">
                 <div class="education_title">Languages</div>
                 <p class="paragraph__list">Python, R, Java, Php, Javascript, JQuery, C, SQL, HTML, CSS</p>
@@ -87,12 +96,25 @@
 </section>
 <!-- random facts -->
 <section class="section random" id="random_section">
-    <div class="container">
-        <div class="random_col_1">
-
+    <div class="container flex_container">
+        <div class="two_col">
+            <!-- this will be an image stack of maybe three or four on top of each other -->
+            <!-- one of a hike -->
+            <img class="img_stack top" id="hike" src="../../images/IMG_4673.jpg" />
+            <!-- one of food -->
+            <img class="img_stack middle" id="risotto" src="../../images/IMG_5809.jpg" />
+            <!-- one of the cat -->
+            <img class="img_stack bottom" id="cat" src="../../images/IMG_4878.jpg" />
         </div>
-        <div class="random_col_2">
-    
+        <div class="two_col">
+            <h3>Random Facts About Me</h3>
+            <div>
+                - I love food, both cooking and eating
+                - Hiking is an after work favorite
+                - I believe everyone should have a soft thing they love
+                - My smol cat brings me joy
+                - I'm currently working my way through One Piece
+            </div>
         </div>
     </div>
 </section>
