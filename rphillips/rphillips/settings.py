@@ -142,6 +142,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = ''
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'css'),
+    os.path.join(BASE_DIR, 'images'),
+    os.path.join(BASE_DIR, 'pdfs'),
     os.path.join(BASE_DIR, 'static/projects'),
     os.path.join(BASE_DIR, 'static/bootstrap.scss'),
 ]
