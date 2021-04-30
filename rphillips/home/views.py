@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from projects.models import Projects
-from resume.models import Job, Education
+from .models import *
 
 # Create your views here.
 def index(request):

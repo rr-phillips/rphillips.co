@@ -50,17 +50,15 @@ a {
     font-size: 16px;
 }
 
-
-
-/* PROJECT and BLOG PAGE CSS */
-.projects_section, .blog_section {
+/* PROJECT PAGE CSS */
+.projects_section {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.projects, .blogs {
+.projects {
     width: 80%;
     height: 20%;
     border: .1rem lightgreen solid;
@@ -72,16 +70,16 @@ a {
     padding: .5rem 1rem;
 }
 
-.project__link, .blog__link {
+.project__link {
     background-color: rgb(200, 238, 200);
 }
 
-.project__title > h2, .blog__title > h2 {
+.project__title > h2 {
     color: white;
     background-color: rgb(200, 238, 200);
 }
 
-.project__title:hover, .blog__title:hover {
+.project__title:hover {
     color: #7fb37f;
 }
 
@@ -89,6 +87,6 @@ a {
 
 }
 
-.project__content, .blog__content {
+.project__content {
     background-color: inherit;
 }

@@ -49,11 +49,7 @@ INSTALLED_APPS = [
     'tinymce',
 
     'rphillips',
-    'blog',
     'home',
-    'projects',
-    'contact_me',
-    'resume',
 ]
 
 MIDDLEWARE = [
