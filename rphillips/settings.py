@@ -29,7 +29,7 @@ except:
         SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if(DEBUG == True):
     ALLOWED_HOSTS = []
