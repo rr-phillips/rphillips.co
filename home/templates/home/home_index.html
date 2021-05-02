@@ -1,0 +1,127 @@
+{% extends base_template %}
+{% load static %}
+
+{% block block_content %}
+<section class="section shrotro" id="shortro_seciton">
+    <div class="home__title">
+        R.Phillips  {{ static_dir }} {{ base_dir }}
+    </div>
+    <div class="home__content">
+        I am web-developer with a passion for backend development.
+    </div>
+</section>
+<!-- work/projects -->
+<section class="section projects colored_background" id="projects_section">
+    <div class="container project_container">
+        {% for project in projects %}
+        <div class="project">
+            <a href="{{ project.repoLink }}" class="project__title" target="_blank">
+                <div>
+                    <h2>{{ project.title }}</h2>
+                </div>
+            </a>
+            <div class="project__date"></div>
+            <div class="project__content">
+                {{ project.description|safe }}
+            </div>
+            <div class="btn__container"></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- long intro -->
+<section class="section intro" id="intro_section">
+    <div class="container flex_container">
+        <div class="two_col intro_header">
+            Nice to meet you!
+        </div>
+        <div class="two_col intro_body">
+           <div class="paragraph">
+               I am a full-stack developer with a passion for backend developement. I currently work with Php, and Typescript - though I enjoy working with and know Python and Django.
+           </div>
+           <div class="paragraph">
+               At my job at Silicon Swamp I work with designers and clients to bring new features and projects through all stages of development to the end user. I have worked with clients in entertainment, retail, relgion, and family care. My additional experience in psychology leads itself to many aspects of the development process from discovery workshops to working with laymen and clients.
+           </div>
+           <div class="paragraph">
+               When I'm not working I can be found taking a hike, watching a movie, or cooking up something new and delicious!
+           </div>
+        </div>
+    </div>
+</section>
+<!-- resume -->
+<section class="section resume colored_background" id="resume_section">
+    <div class="container flex_container">
+        <div class="three_col">
+            <div class="resume__work">
+                <div class="experience__title">Experience</div>
+                {% for job in jobs %}
+                    <h2 class="resume__title">{{ job.title }}</h2>
+                    <h3 class="resume__company">{{ job.company }}</h3>
+                    <h4 class="resume__loc">{{ job.location }}</h4>
+                    <p class="resume__time">{{ job.start|date:"M Y" }} - {% if job.end %} {{ job.end|date:"M Y" }} {% else %} Current {% endif %}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="three_col">
+            <div class="resume__education">
+				<div class="education_title">Education</div>
+				{% for educate in educations %}
+					<div class="degree">
+						<h2 class="resume__degree">{{ educate.degree }}</h2>
+						<h3 class="resume__institute">{{ educate.institution }}</h3>
+						<p class="resume__time">{{ educate.start|date:"M Y" }} - {% if educate.end %}{{ educate.end|date:"M Y" }}{% else %} Current {% endif %}
+					</div>
+				{% endfor %}
+			</div>
+        </div>
+        <div class="three_col">
+            <div class="languages__section">
+                <div class="education_title">Languages</div>
+                <p class="paragraph__list">Python, R, Java, Php, Javascript, JQuery, C, SQL, HTML, CSS</p>
+            </div>
+            <div class="tools__section">
+                <div class="education_title">Tools</div>
+                <p class="paragraph__list">JIRA, Trello, Visual Studio Code, Vim, RStudio, Filezilla, MySQL Workbench, Plesk, Command Line/Prompt, Bitbucket, Github, Slack</p>
+            </div>
+            <div class="skills__section">
+                <div class="education_title">Skills</div>
+                <p class="paragraph__list">Git, Algorithms, Machine Learning, Data Mining, Django Web Framework, Angular.js, Ionic Framework, CRMs, Agile Methodologies, Scrum, Xtreme Programming Practices</p>
+            </div>
+            <div class="operating__systems">
+                <div class="education_title">Operating Systems</div>
+                <p class="paragraph__list">Linux, iOS, Windows</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- random facts -->
+<section class="section random" id="random_section">
+    <div class="container flex_container random_container">
+        <div class="two_col">
+            <div class="img_container">
+                <div class="img_stack">
+                    <!-- one of a hike -->
+                    <!-- <img class="img top" id="hike" src="{{ base_dir }}/static/images/IMG_4673.jpg" /> -->
+                    <img class="img top" id="hike" src="{% static 'images/IMG_4673.jpg' %}" />
+                    <!-- one of food -->
+                    <img class="img middle" id="risotto" src="{% static 'images/IMG_5809.jpg' %}" />
+                    <!-- one of the cat -->
+                    <img class="img bottom" id="cat" src="{% static 'images/IMG_4878.jpg' %}" />
+                </div>
+            </div>
+        </div>
+        <div class="two_col">
+            <div class="random_facts">
+                <h3>Get To Know Me</h3>
+                <ul class="random__list">
+                    <li>- I love food, both cooking and eating</li>
+                    <li>- Hiking is an after work favorite</li>
+                    <li>- I believe everyone should have a soft thing they love</li>
+                    <li>- My smol cat brings me joy</li>
+                    <li>- I'm currently working my way through One Piece</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
